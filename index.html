@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div class="png">
+        <h1 class="png_titolo" data-text="PNG">PNG</h1>
+    </div>
+
+    <nav class="navigazione">
+        <div class="capitolo_link" data-target="introduzione">INTRODUZIONE</div>
+        <div class="capitolo_link" data-target="caratteristiche">CARATTERISTICHE</div>
+        <div class="capitolo_link" data-target="storia">STORIA</div>
+        <div class="capitolo_link" data-target="applicazioni">APPLICAZIONI</div>
+        <div class="capitolo_link" data-target="utilizzo">UTILIZZO</div>
+    </nav>
+
+    <main class="contenuto">
+        <section id="introduzione" class="capitolo">
+            <h3>INTRODUZIONE</h3>
+            <p>Portable Network Graphics (sigla PNG) è un formato di file utilizzato in informatica per memorizzare immagini, introdotto nel 1995 e caratterizzato da compressione <span class="evidenziatore">LOSSLESS</span>, efficiente soprattutto con grafica non fotografica. Nacque come successore migliorato e libero del formato GIF e divenne un valido esempio di buona qualità di uno standard de facto nel campo del software libero. Ne esiste un formato derivato, Multiple-image Network Graphics o MNG, ideato nel 2001, che è simile al GIF animato. è un formato di immagine digitale molto usato per la sua capacità di compressione senza perdita di qualità. Questo significa che, a differenza di formati come il JPEG, non perde dettagli o introduce artefatti quando viene salvato più volte.</p>
+            <div class="trasparenza"></div>
+        </section>
+
+        <section id="caratteristiche" class="capitolo">
+            <h3>CARATTERISTICHE</h3>
+            <p>Il formato PNG è superficialmente simile al GIF, in quanto è capace di immagazzinare immagini in modo lossless, ossia senza perdere alcuna informazione, ed è più efficiente con immagini non fotorealistiche (che contengono troppi dettagli per essere compresse in poco spazio). Essendo stato sviluppato molto tempo dopo, non ha molte delle limitazioni tecniche del formato GIF: può memorizzare immagini a 24 bit (mentre il GIF era limitato agli 8 bit, 256 colori) e ha un canale dedicato per la trasparenza (canale alfa).</p>
+            
+            <div class="sottotitolo interattivo" id="compressione-interattiva">
+                <h4>Esploratore di Compressione PNG</h4>
+                <p>La compressione senza perdita nel PNG è un processo in due fasi: <span class="evidenziatore">Filtraggio</span> e <span class="evidenziatore">DEFLATE</span>. Esplora come funziona:</p>
+                
+                <div class="compression-tabs">
+                    <button class="tab-btn active" data-tab="filtering">Filtraggio</button>
+                    <button class="tab-btn" data-tab="deflate">Compressione DEFLATE</button>
+                </div>
+                
+                <div class="tab-content active" id="filtering">
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="none">
+                            <span class="filter-name">None</span>
+                            <span class="filter-desc">Nessun filtraggio</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sub">
+                            <span class="filter-name">Sub</span>
+                            <span class="filter-desc">Sottrae pixel a sinistra</span>
+                        </button>
+                        <button class="filter-btn" data-filter="up">
+                            <span class="filter-name">Up</span>
+                            <span class="filter-desc">Sottrae pixel sopra</span>
+                        </button>
+                        <button class="filter-btn" data-filter="average">
+                            <span class="filter-name">Average</span>
+                            <span class="filter-desc">Media di sinistra e sopra</span>
+                        </button>
+                        <button class="filter-btn" data-filter="paeth">
+                            <span class="filter-name">Paeth</span>
+                            <span class="filter-desc">Predittore Paeth</span>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-visualization">
+                        <div class="pixel-grid-container">
+                            <h5>Pixel Originali</h5>
+                            <div class="pixel-grid original"></div>
+                        </div>
+                        <div class="pixel-grid-container">
+                            <h5>Dati Filtrati</h5>
+                            <div class="pixel-grid filtered"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-explanation">
+                        <h5>Come funziona:</h5>
+                        <p class="explanation-text">Nessun filtraggio. I dati originali vengono inviati direttamente al compressore.</p>
+                        <div class="efficiency-meter">
+                            <div class="meter-bar" style="width: 0%"></div>
+                            <span>Efficienza di compressione: <span class="efficiency-value">0</span>%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="deflate">
+                    <div class="compression-steps">
+                        <div class="step">
+                            <h5>1. Algoritmo LZ77</h5>
+                            <p>Trova e sostituisce sequenze ripetute con riferimenti:</p>
+                            <div class="data-example">
+                                <div class="original">Originale: ABCDEFABCDEFABCDEF</div>
+                                <div class="compressed">Dopo LZ77: ABCDEF(6,6)(6,6)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>2. Codifica Huffman</h5>
+                            <p>Assegna codici più corti ai byte più frequenti:</p>
+                            <div class="data-example">
+                                <div class="original">Dati LZ77: ABCDEF(6,6)(6,6)</div>
+                                <div class="compressed">Dopo Huffman: 010 011 100 101 110 111 (6,6)(6,6)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="compression-controls">
+                        <label>
+                            Livello di compressione (0-9):
+                            <input type="range" min="0" max="9" value="6" class="compression-slider">
+                            <div class="slider-labels">
+                                <span>0 (veloce)</span>
+                                <span class="recommended">6 (consigliato)</span>
+                                <span>9 (massima)</span>
+                            </div>
+                        </label>
+                        
+                        <div class="compression-stats">
+                            <div class="stat">
+                                <div class="stat-value">65</div>
+                                <div class="stat-label">Riduzione dimensione (%)</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">2.85</div>
+                                <div class="stat-label">Rapporto compressione</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="compression-tips">
+                    <h5>Quando la compressione PNG funziona meglio:</h5>
+                    <div class="tips-grid">
+                        <div class="tip">
+                            <div class="tip-icon">🖼️</div>
+                            <h6>Aree a tinta unita</h6>
+                            <p>PNG eccelle con grafiche contenenti ampie regioni di colore uniforme</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-icon">✏️</div>
+                            <h6>Testo e line art</h6>
+                            <p>Bordi netti e palette di colori limitate si comprimono efficientemente</p>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-icon">🎨</div>
+                            <h6>Colori limitati</h6>
+                            <p>Il formato PNG-8 funziona bene con immagini che usano pochi colori</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sottotitolo interattivo" id="alpha-interattivo">
+                <h4>Studio Canale Alpha</h4>
+                <p>Il canale alpha nel PNG permette 256 livelli di trasparenza (8-bit). Confronta con altri formati:</p>
+                
+                <div class="alpha-comparison">
+                    <div class="format">
+                        <div class="format-label">GIF</div>
+                        <div class="alpha-visual gif">
+                            <div class="alpha-gradient"></div>
+                        </div>
+                        <div class="format-details">
+                            <p>1-bit alpha</p>
+                            <p>Solo trasparente/opaco</p>
+                        </div>
+                    </div>
+                    
+                    <div class="format">
+                        <div class="format-label">PNG-8</div>
+                        <div class="alpha-visual png8">
+                            <div class="alpha-gradient"></div>
+                        </div>
+                        <div class="format-details">
+                            <p>8-bit alpha</p>
+                            <p>256 livelli</p>
+                        </div>
+                    </div>
+                    
+                    <div class="format">
+                        <div class="format-label">PNG-24</div>
+                        <div class="alpha-visual png24">
+                            <div class="alpha-gradient"></div>
+                        </div>
+                        <div class="format-details">
+                            <p>8-bit alpha</p>
+                            <p>+ 16.7M colori</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alpha-playground">
+                    <h5>Esperimenta con la trasparenza:</h5>
+                    
+                    <div class="playground-container">
+                        <div class="canvas-area">
+                            <div class="background-selector">
+                                <button class="bg-btn active" data-bg="checker">Scacchiera</button>
+                                <button class="bg-btn" data-bg="gradient">Gradiente</button>
+                                <button class="bg-btn" data-bg="photo">Foto</button>
+                            </div>
+                            
+                            <div class="transparency-canvas">
+                                <div class="canvas-bg checker"></div>
+                                <div class="canvas-bg gradient"></div>
+                                <div class="canvas-bg photo"></div>
+                                <div class="alpha-object circle"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="controls-area">
+                            <div class="control-group">
+                                <label>Forma:</label>
+                                <select class="shape-select">
+                                    <option value="circle">Cerchio</option>
+                                    <option value="square">Quadrato</option>
+                                    <option value="triangle">Triangolo</option>
+                                </select>
+                            </div>
+                            
+                            <div class="control-group">
+                                <label>Opacità: <span class="opacity-value">100</span>%</label>
+                                <input type="range" min="0" max="100" value="100" class="opacity-slider">
+                            </div>
+                            
+                            <button class="export-btn">Esporta come PNG</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alpha-applications">
+                    <h5>Applicazioni pratiche della trasparenza PNG:</h5>
+                    
+                    <div class="applications-grid">
+                        <div class="application">
+                            <div class="app-visual shadow"></div>
+                            <h6>Ombre morbide</h6>
+                            <p>Transizioni graduali su qualsiasi sfondo</p>
+                        </div>
+                        <div class="application">
+                            <div class="app-visual anti-alias"></div>
+                            <h6>Anti-aliasing perfetto</h6>
+                            <p>Bordi smussati su sfondi variabili</p>
+                        </div>
+                        <div class="application">
+                            <div class="app-visual ui"></div>
+                            <h6>Elementi UI</h6>
+                            <p>Componenti che si adattano a diversi temi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="storia" class="capitolo">
+            <h3>STORIA</h3>
+            <p>L'ideazione del PNG avvenne in seguito alla decisione, nel 1994, dei detentori del brevetto dell'allora molto diffuso formato GIF (CompuServe e Unisys), di richiedere il pagamento di royalty per ogni programma che ne facesse uso. La prima reazione della comunità informatica a tale improvviso cambiamento fu la sorpresa, a cui seguì la scelta di indirizzarsi verso lo sviluppo di un'alternativa. Inizialmente infatti la sigla PNG era anche acronimo ricorsivo di "PNG's Not GIF" ("il PNG non è il GIF").</p>
+        </section>
+
+        <section id="applicazioni" class="capitolo">
+            <h3>APPLICAZIONI</h3>
+            <p>L'utilizzo del PNG è stato inizialmente limitato, a causa del fatto che pochi programmi erano capaci di scrivere o leggere tali immagini. Col tempo, tutti i maggiori programmi di grafica e di navigazione hanno accettato il formato PNG, che ha trovato così più largo utilizzo.</p>
+        </section>
+
+        <section id="utilizzo" class="capitolo">
+            <h3>UTILIZZO</h3>
+            <div class="utilizzo_contenuto">
+                <div class="utilizzo_testo">
+                    <h4>Usalo per</h4>
+                    <ul>
+                        <li>Immagini con trasparenza</li>
+                        <li>Grafica vettoriale</li>
+                        <li>Qualità senza perdita</li>
+                    </ul>
+                </div>
+                <div class="utilizzo_testo">
+                    <h4>Evitalo per</h4>
+                    <ul>
+                        <li>Animazioni complesse</li>
+                        <li>Foto molto grandi</li>
+                        <li>Stampa professionale</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>Elaborato 2 | Atlante tecnologico | PNG</div>
+        <div>CV2 | Arianna Copa | SUPSI DACD Mendrisio</div>
+        <div>CV429.01 Interaction design | Andreas Gysin | Giovanni Profeta</div>
+        <div class="sources">
+            <h4>Fonti</h4>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics" target="_blank" rel="noopener noreferrer">Wikipedia: Portable Network Graphics</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/DEFLATE" target="_blank" rel="noopener noreferrer">Wikipedia: Deflate</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Alpha_compositing" target="_blank" rel="noopener noreferrer">Wikipedia: Composizione alfa</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types" target="_blank" rel="noopener noreferrer">MDN Web Docs: Guida al tipo e al formato dei file immagine</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

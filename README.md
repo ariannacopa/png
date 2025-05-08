@@ -6,7 +6,7 @@ Elaborato 2: Atlante tecnologico: file multimediali
 
 # PNG: Portable Network Graphics
 Autore: Arianna Copa  
-[PNG: Portable Network Graphics](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
+[PNG: Portable Network Graphics]([https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks](https://ariannacopa.github.io/png/))
 
 
 ## Introduzione e tema

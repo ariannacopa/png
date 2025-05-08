@@ -40,4 +40,4 @@ JavaScript: Per l'interattività e la gestione degli eventi.<br>
 Font Google: Per una tipografia moderna e leggibile.
 
 ## Target e contesto d’uso
-Il progetto è rivolto a studenti di comunicazione visiva che sono interessati a comprendere meglio o ad approfondire cos'è e come funziona il metodo di compressione dell'estensione png.
+Il progetto è rivolto a studenti di comunicazione visiva che sono interessati a comprendere meglio o ad approfondire cos'è e come funziona il metodo di compressione del formato png.

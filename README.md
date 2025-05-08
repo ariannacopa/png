@@ -2,7 +2,7 @@ SUPSI 2025
 Corso d’interaction design, CV428.01  
 Docenti: A. Gysin, G. Profeta  
 
-Elaborato 1: Me, Myself & AI  
+Elaborato 2: Atlante tecnologico: file multimediali
 
 # PNG: Portable Network Graphics
 Autore: Arianna Copa  

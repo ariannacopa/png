@@ -780,6 +780,11 @@ body {
     font-size: 0.8rem;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* RIMUOVI il valore percentuale */
+}
+
+.efficiency-value {
+    display: none;
 }
 
 .compression-steps {
@@ -819,6 +824,10 @@ body {
 }
 
 .compression-slider::-webkit-slider-thumb {
+    appearance: none;
+    appearance: none;
+    appearance: none;
+    appearance: none;
     -webkit-appearance: none;
     width: 18px;
     height: 18px;

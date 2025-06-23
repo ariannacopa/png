@@ -24,6 +24,12 @@ https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types
 
 
 ## Design dell’interfaccia e modalità di interazione
+<img width="1728" alt="immagine_interfaccia_1" src="https://github.com/user-attachments/assets/dc59a250-af5c-45fe-8a55-260ad027ee68" />
+<img width="1728" alt="immagine_interfaccia_2" src="https://github.com/user-attachments/assets/754cf8c0-b8c0-444c-a61f-7709748a8f76" />
+<img width="1728" alt="immagine_interfaccia_3" src="https://github.com/user-attachments/assets/ccd03914-1f80-45bc-85ab-b33eb29d6061" />
+<img width="1728" alt="immagine_interfaccia_4" src="https://github.com/user-attachments/assets/79d5b361-b7f9-4b90-ba75-6f649dd8a628" />
+
+
 L'interfaccia è progettata per essere intuitiva e interattiva:
 
 Navigazione: Una barra di navigazione fissa permette di accedere rapidamente alle diverse sezioni.

@@ -1,5 +1,5 @@
 SUPSI 2025  
-Corso d’interaction design, CV428.01  
+Corso d’interaction design, CV429.01  
 Docenti: A. Gysin, G. Profeta  
 
 Elaborato 2: Atlante tecnologico: file multimediali

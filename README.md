@@ -41,8 +41,8 @@ Elementi Interattivi: Sezioni come l'Esploratore di Compressione e lo Studio Can
 Il progetto utilizza le seguenti tecnologie:
 
 HTML: Per la struttura della pagina. <br>
-CSS: Per la stilizzazione e il design responsivo.<br>
-JavaScript: Per l'interattività e la gestione degli eventi.<br>
+CSS: Per gli stili.<br>
+JavaScript: Per l'interattività.<br>
 Font Google: Per una tipografia moderna e leggibile.
 
 ## Target e contesto d’uso
